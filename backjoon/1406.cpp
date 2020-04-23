@@ -21,27 +21,36 @@ int main(void)
     char buf = 0;
 
     std::list<char>::iterator iter = list.end();
-
     for(unsigned int i = 0 ; i < M; i++)
     {
         cin >> buf;
 
         if(buf == 'L')
         {
-            iter = iter == list.begin() ? iter : iter--;
+            if(iter != list.begin())
+            {
+                iter--;                
+            }
         }
         else if(buf == 'D')
         {
-            iter = iter == list.end() ? iter : iter++;
+            if(iter != list.end())
+            {
+                iter++;
+            }
         }
         else if(buf == 'B')
         {
-            iter = list.erase(iter);
+            if(iter != list.begin())
+            {
+                iter--;     
+                iter = list.erase(iter);
+            }
         }
         else if( buf == 'P')
         {
             cin >> buf;
-            iter = list.insert(iter,buf);
+            list.insert(iter,buf);
         }
     }
 
