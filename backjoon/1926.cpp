@@ -39,7 +39,7 @@ int bfs(int i, int j)
             {
                 if (!mapVisited[xTmp][yTmp] && map[xTmp][yTmp] == 1)
                 {
-                 mapVisited[xTmp][yTmp] = true;
+                    mapVisited[xTmp][yTmp] = true;
 
                     buf = new node;
                     buf->x = xTmp;
